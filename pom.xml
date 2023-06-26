@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>socket</module>
+        <module>java</module>
     </modules>
 
 
