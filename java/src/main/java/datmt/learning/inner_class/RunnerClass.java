@@ -1,9 +1,5 @@
 package datmt.learning.inner_class;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class RunnerClass {
     static class RunnerOne{// test Talking clock
         public static void main(String[] args) {
@@ -36,7 +32,7 @@ public class RunnerClass {
                     return s + " with implement this interface";
                 }
             };
-            var anonymousClassByClass = new ExampleClass(1) {// initialization Anonymous inner class
+            var anonymousClassByClass = new ExampleClass() {// initialization Anonymous inner class
                 public void print(String a) {
                     System.out.println(a);
                 }
