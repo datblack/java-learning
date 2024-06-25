@@ -6,6 +6,10 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Data
 @Entity(name = "`order`")
 @AllArgsConstructor
@@ -22,4 +26,10 @@ public class Order {
     String address;
     @Enumerated(EnumType.STRING)
     BaseStatus status;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Set<OrderProduct> orderProducts = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Product> products;
 }

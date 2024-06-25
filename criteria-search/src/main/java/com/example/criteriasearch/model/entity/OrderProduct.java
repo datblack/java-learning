@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Entity
+@Entity(name = "product_orders")
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
@@ -17,8 +17,15 @@ public class OrderProduct {
     @Generated
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Long productId;
-    Long orderId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
+
     @Enumerated(EnumType.STRING)
     BaseStatus status;
 }

@@ -20,7 +20,11 @@ public class Product {
     String name;
     String description;
     Integer price;
-    Long categoryId;
+
+    @JoinColumn
+    @ManyToOne(fetch = FetchType.LAZY)
+    Category category;
+
     @Enumerated(EnumType.STRING)
     BaseStatus status;
 }

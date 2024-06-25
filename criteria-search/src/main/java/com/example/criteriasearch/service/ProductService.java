@@ -3,6 +3,8 @@ package com.example.criteriasearch.service;
 import com.example.criteriasearch.model.entity.Product;
 import com.example.criteriasearch.model.request.GetProductRequest;
 
+import java.util.List;
+
 public interface ProductService {
-    Product get(GetProductRequest getProductRequest);
+    List<Product> get(GetProductRequest getProductRequest);
 }
