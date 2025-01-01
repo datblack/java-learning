@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: criteria-search
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3307/criteria_search
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+# logging sql config
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
